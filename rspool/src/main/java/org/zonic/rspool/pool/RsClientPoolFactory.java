@@ -16,10 +16,10 @@ public class RsClientPoolFactory extends BasePooledObjectFactory<RsClient> {
 	public PooledObject<RsClient> wrap(RsClient client) {
 		return new DefaultPooledObject<RsClient>(client);
 	}
-	
-    @Override
-    public void destroyObject(PooledObject<RsClient> p) throws Exception  {
-    	p.getObject().shutDown();
-    }
+
+	@Override
+	public void destroyObject(PooledObject<RsClient> p) throws Exception {
+		p.getObject().shutDown();
+	}
 
 }
